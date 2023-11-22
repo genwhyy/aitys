@@ -1,11 +1,12 @@
 # Create a database URL for SQLAlchemy
 
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
+
 from sqlalchemy.orm import sessionmaker
+from configs.configs import DB_NAME
 
 # Local SQLite3 database url
-SQLALCHEMY_DATABASE_URL = "sqlite:///./final.db"
+SQLALCHEMY_DATABASE_URL = f"sqlite:///./{DB_NAME}"
 
 # # Remote PostgreSQL database url
 # SQLALCHEMY_DATABASE_URL = "postgres://username:password@localhost:5432/DB_Name"
@@ -22,7 +23,6 @@ engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 # Base is used to create each of the database models or classes (the ORM models)
-Base = declarative_base()
 
 def get_db():
     db = SessionLocal()
