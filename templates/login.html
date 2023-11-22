@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/login-style.css">
+</head>
+<body>
+    <img id="background" src="static/images/splash.png" alt="">
+    <div class="container">
+        <div class="container-text">
+            <h2>Hello, this is a login form.</h2> <br>
+        </div>
+        <div class="container-form">
+            <form action="{{ url_for('login')}}" method="POST" enctype="multipart/form-data">
+                <label for="lname">Email:</label><br>
+                <input type="text" id="email" name="email" value="" class="input-in"><br><br>
+                <label for="lname">Password:</label><br>
+                <input type="password" id="password" name="password" value="" class="input-in"><br><br>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
