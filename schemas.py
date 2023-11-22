@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, conint
 from datetime import datetime
 # from typing import Optional
 
@@ -16,10 +16,19 @@ class UserBase(BaseModel):
     user_fname: str
     user_sname: str
 
-
-class UserOut(BaseModel):
+class User(UserBase):
     id: int
     login: str
+    user_fname: str
+    user_sname: str
+    
+    class Config:
+        orm_mode = True
+
+
+class UserOut(BaseModel):
+    User: UserBase
+    subscribe: int
 
     class Config:
         orm_mode = True
@@ -30,6 +39,8 @@ class Post(PostBase):
     created_at: datetime
     owner_id: int
     owner: UserBase
+    content: str
+    title: str
 
     class Config:
         orm_mode = True
@@ -37,6 +48,7 @@ class Post(PostBase):
 
 class PostOut(BaseModel):
     Post: Post
+    like: int
 
     class Config:
         orm_mode = True
@@ -62,3 +74,12 @@ class Token(BaseModel):
 class TokenData(BaseModel):
     id: int
     # id: Optional[int] = None
+
+class Like(BaseModel):
+    post_id: int
+    dir: conint(le=1)
+
+
+class Subscribe(BaseModel):
+    user_id: int
+    dir: conint(le=1)

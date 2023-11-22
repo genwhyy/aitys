@@ -1,15 +1,16 @@
-from jose import ExpiredSignatureError, JWTError, jwt
+from jose import JWTError, jwt
 from datetime import datetime, timedelta
 import schemas, database, models
 from fastapi import Depends, status, HTTPException
 from sqlalchemy.orm import Session
 from fastapi.security import OAuth2PasswordBearer
+from configs.configs import SECRET_KEY, ALGORITHM, ACCESS_TOKEN_EXPIRE_MINUTES
 
 oath_scheme = OAuth2PasswordBearer(tokenUrl='login')
 
-SECRET_KEY = "09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7"
-ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 60
+SECRET_KEY = f"{SECRET_KEY}"
+ALGORITHM = f"{ALGORITHM}"
+ACCESS_TOKEN_EXPIRE_MINUTES = int(ACCESS_TOKEN_EXPIRE_MINUTES)
 
 
 

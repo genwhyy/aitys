@@ -1,8 +1,8 @@
-from fastapi import FastAPI, Response, status, HTTPException, Depends, APIRouter
+from fastapi import Response, status, HTTPException, Depends, APIRouter
+from sqlalchemy import func
 from sqlalchemy.orm import Session
 from typing import List, Optional
 
-from sqlalchemy import func
 import models, schemas, oath
 from database import get_db
 
@@ -12,6 +12,11 @@ router = APIRouter(
     tags=['Posts']
 )
 
+@router.get("/", response_model=List[schemas.PostOut])
+def posts(db: Session = Depends(get_db), current_user:int = Depends(oath.get_current_user), skip=0, limit=100):
+    posts = db.query(models.Post, func.count(models.Like.post_id).label("like")).join(
+        models.Like, models.Like.post_id == models.Post.id, isouter=True).group_by(models.Post.id).limit(limit).offset(skip).all()
+    return posts
 
 
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=schemas.Post)
