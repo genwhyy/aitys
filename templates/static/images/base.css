@@ -1,0 +1,10 @@
+:root{
+    --primary-color-theme: #fff;
+
+    --btn-tweet-post: #1983FF;
+    --btn-text-color: #fff;
+    
+    --grey-transparent: rgba(0, 0, 0, 0.7);
+
+    --placeholder-color: #888888;
+}

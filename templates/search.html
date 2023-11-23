@@ -3,72 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>search</title>
+    <title>Search</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="images/main.css">
     <script src="https://kit.fontawesome.com/549cc9b111.js" crossorigin="anonymous"></script>
-    <!--fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="static\css\search-style.css">
 </head>
 <body>
-    <img id="background" src="static/images/splash.png" alt="">
-    <div class="left-navbar">
-        <div class="nav-logo">
-            <h1><img src="static/images/logotus.png" alt="aitys a"></h1>
-        </div>
-        <div class="nav-list">
-            <!--<li> 
-                <img id="icon-a" src="images/a.png" alt="">
-                <ul> 
-                    <a href="#">Home</a></ul>
-                <hr>
-                <ul><a href="#">Search</a></ul>
-                <hr>
-                <ul><a href="#">Music</a></ul>
-                <hr>
-                <ul><a href="#">Messages</a></ul>
-                <hr>
-                <ul><a href="#">Notifications</a></ul>
-                <hr>
-                <ul><a href="#">Profile</a></ul>
-            </li>-->
-            
-            <p> <i class="fa-solid fa-house" id="icon-list"></i>
-                <a href="#">Home</a></p>
-            <hr>
-            
-            <p><i class="fa-solid fa-magnifying-glass" id="icon-list"></i><a href="#">Search</a></p>
-            <hr>
-            <p><i class="fa-solid fa-music" id="icon-list"></i><a href="#">Music</a></p>
-            <hr>
-            <p><i class="fa-solid fa-message" id="icon-list"></i>
-                <a href="#">Messages</a></p>
-            <hr>
-            <p><i class="fa-solid fa-bell" id="icon-list"></i>
-                <a href="#">Notifications</a></p>
-            <hr>
-            <p> <i class="fa-solid fa-user" id="icon-list"></i>
-                <a href="#">Profile</a></p>
-        </li>
-        </div>
-    </div>
-    <div class="container-middle">
-        <div class="middle-text">
-            <h3>Today</h3>
-            <div class="account1">
-                
-                <p><img src="static/images/pfp (1).png" alt="">Merei liked your post</p>
+  <div class="container">
+
+
+    <div class="overlay">
+
+        <div class="left-side">
+            <div class="logo">
+                <img src="images/a.png" alt="A">
+                <h3>ITYS</h3>
             </div>
+
+            <nav class="menu">
+              <div>
+                  <i class="fa-solid fa-house-chimney"></i>
+                  <a href="main.html">Home</a>
+              </div>
+              <div>
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <a href="search.html">Search</a>
+              </div>
+              <div>
+                  <i class="fa-solid fa-music"></i>
+                  <a href="music.html">Music</a>
+              </div>
+              <div>
+                  <i class="fa-solid fa-bell"></i>
+                  <a href="notifications.html">Notifications</a>
+              </div>
+              <div>
+                  <i class="fa-regular fa-user"></i>
+                  <a href="profile.html">Profile</a>
+              </div>
+          </nav>
         </div>
-    </div>
-    <div class="container-end">
-        <div class="container-notext-text">
-            <i class="fa-solid fa-comment-slash fa-5x"></i>
-            <p>Your messages</p>
-            <button type="button" onclick="alert('SOON!')">New message</button>
-        <!--or it's better to use input but again i do not understand the logic-->
+
+        <div class="right-side">
+            <div class="profile">
+                <div>
+                    <img src="images/pfp_oruntaev.png" alt="pfp" class="pfp">
+                    <h6 class="nickname">oryntaev</h6>
+                </div>
+                <a href="login page.html">Switch account</a>
+            </div>
+
+            <div class="recommendations">
+                <div>
+                    <p>Recommendations for you</p>
+                    <a href="#">All</a>
+                </div>
+                <div class="recommendation">
+                    <div>
+                        <img src="images/pfp_merei.png" alt="pfp" class="pfp">
+                        <h6 class="nickname">merei</h6>
+                    </div>
+                    <button>Follow</button>
+                </div>
+                <div class="recommendation">
+                    <div>
+                        <img src="images/pfp_alisa.png" alt="pfp" class="pfp">
+                        <h6 class="nickname">alissa</h6>
+                    </div>
+                    <button>Follow</button>
+                </div>
+                <div class="recommendation">
+                    <div>
+                        <img src="images/pfp_dayana.png" alt="pfp" class="pfp">
+                        <h6 class="nickname">dayana</h6>
+                    </div>
+                    <button>Follow</button>
+                </div>
+                <div class="recommendation">
+                    <div>
+                        <img src="images/pfp_ye.png" alt="pfp" class="pfp">
+                        <h6 class="nickname">ye</h6>
+                    </div>
+                    <button>Follow</button>
+                </div>
+                <div class="recommendation">
+                    <div>
+                        <img src="images/pfp_dumile.png" alt="pfp" class="pfp">
+                        <h6 class="nickname">dumile</h6>
+                    </div>
+                    <button>Follow</button>
+                </div>
+            </div>
+
         </div>
+
+      </div>
+
+      <br>
+
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search..." name="">
+        <button class="search-button"><i class="fas fa-search"></i></button>
     </div>
+
+</div>
 </body>
 </html>

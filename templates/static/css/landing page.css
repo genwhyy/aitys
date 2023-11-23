@@ -1,0 +1,162 @@
+body {
+    background: url(static/images/main-bg.png);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: #000000;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #1983FF;
+}
+
+.paket {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150vh;
+    margin: 0 auto;
+    transform: scale(3);
+}
+
+.container-pictures {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 20px;
+}
+
+.container-pictures > div {
+    width: 30%; /* Adjust the width based on your design preference */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* 80% transparent white */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    overflow: hidden; /* To contain the content within the fixed size */
+}
+
+.container-pictures img {
+    max-width: 100%;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.container-pictures h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.container-pictures p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+    overflow: hidden; /* To contain the text within the fixed size */
+    text-overflow: ellipsis; /* To add ellipsis (...) for overflowed text */
+    white-space: nowrap; /* To prevent text from wrapping */
+}
+
+.container-pictures .gaz-media,
+.container-pictures .mer-media,
+.container-pictures .ali-media {
+    margin-top: 20px;
+}
+
+.container-pictures .gaz-media p,
+.container-pictures .mer-media p,
+.container-pictures .ali-media p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+.container-pictures .gaz-media i,
+.container-pictures .mer-media i,
+.container-pictures .ali-media i {
+    margin-right: 5px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+.info-container {
+    background-color: rgba(255, 255, 255, 0.8); /* 80% transparent white */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about h2 {
+    color: #3498db;
+}
+
+.icons {
+    margin-top: 20px;
+    text-align: center; /* Center the icons */
+}
+
+.icons i {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #333;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #eee;
+}
+
+
