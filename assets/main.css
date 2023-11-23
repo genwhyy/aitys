@@ -1,0 +1,465 @@
+/* Imports */
+
+@import url('base.css');
+
+/* Global */
+
+html{
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    height: 100% !important;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'sans-serif';
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+    background-image: url('/alisa_project/assets/bg.png');
+    background-size: 100%;
+}
+
+.container{
+    width: 1280px;
+    position: relative;
+}
+
+body, .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Content */
+
+.content, .content_profile{
+    width: 638px;
+    padding: 0px 22px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.content > h4{
+    align-self: flex-start;
+    margin: 38px 0 20px 0;
+}
+
+.pfp{
+    width: 50px;
+    border-radius: 9999999px;
+}
+
+/* Content > Tweets */
+
+.tweet{
+    width: 100%;
+    
+    padding: 12px 12px;
+
+    border-radius: 30px;
+
+    background: var(--primary-color-theme);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.new-post-container{
+    align-items: center;
+    margin-bottom: 4em;
+    padding: 24px 30px 24px 22px;
+}
+
+.new-post-container > img{
+    margin-right: 16px;
+
+}
+
+.new-post-container > textarea{
+    width: 100%;
+    height: 100%;
+
+    border: none;
+
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-y: auto;
+    resize: none;
+}
+  
+.new-post-container > textarea::placeholder{
+    color: var(--placeholder-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.new-post-container > button{
+    margin-left: 16px;
+    padding: .8rem 2.3rem;
+
+    border: none;
+    border-radius: 20px;
+
+    font-size: 1.5rem;
+    line-height: 22.5px;
+
+    background: var(--btn-tweet-post);
+    color: var(--btn-text-color);
+}
+
+/* ------------------------------ */
+
+.posts-container{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 25px;
+}
+
+.posts-container > .tweet > img{
+    margin: 8px 10px 0 0;
+}
+
+.tweet-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.tweet-content__info{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.tweet-time{
+    color: var(--grey-transparent);
+}
+
+.tweet-time::before{
+    content: '•';
+    margin: 0px 5px;
+    color: var(--grey-transparent);
+}
+
+.tweet-content__text{
+    font-size: 1.3rem;
+    line-height: 1.95rem;
+
+    white-space: pre-line;
+
+    margin-bottom: 15px;
+}
+
+.tweet-content__stats{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5.5em;
+
+    color: var(--grey-transparent);
+}
+
+
+/* Overlay */
+
+.overlay{
+    width: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.left-side, .right-side{
+    position: absolute;
+    width: 300px;
+    height: 700px;
+    border-radius: 0px 0px 5px 5px;
+    background: #FFFFFF80;
+}
+
+/* Left Side */
+
+.left-side{
+    padding: 44px 31px;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 700;
+    margin-bottom: 70px;
+}
+
+.logo > img{
+    height: 100%;
+}
+
+/* Right Side */
+
+.right-side{
+    right: 0;
+    padding: 32px 27px;
+}
+
+.menu a{
+    font-size: 2rem;
+    line-height: 2.2rem;
+    text-decoration: none;
+    color: black;
+}
+
+.menu i, .menu > div > .fa-regular{
+    font-size: 2.4rem;
+    margin-right: 22px;
+}
+
+.menu > div{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.menu > div::after{
+    content: ' ';
+    position: absolute;
+    width: 165px;
+    height: 1px;
+    background-color: black;
+    bottom: 0;
+    margin-bottom: -25px;
+}
+
+.menu > div:last-child::after{
+    display: none;
+}
+
+.profile{
+    margin-bottom: 24px;
+}
+
+.profile, .recommendation{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile > div, .recommendation > div{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.profile img, .recommendation img{
+    margin-right: 10px;
+}
+
+.recommendation > button{
+    margin-left: 16px;
+    padding: .2rem .8rem; 
+
+    border: 1px solid #525252;
+    border-radius: 10px;
+
+    background: none;
+    font-weight: bold;
+
+    font-size: 1.5rem;
+    line-height: 22.5px;
+
+    color: var(--btn-tweet-post);
+
+}
+
+.profile > a{
+    width: 100%;
+    text-align: right;
+    text-decoration: none;
+    color: #1A83FF;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    font-weight: bold;
+}
+.recommendations > div:first-child{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recommendations > div:first-child > p, .recommendations > div:first-child > a{
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    color: #3F3F3F;
+}
+.recommendations > div:first-child > a{
+    color: black;
+    text-decoration: none;
+}
+
+.recommendations{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+}
+
+/* Text */
+
+h3{
+    font-size: 3.4rem;
+    line-height: 2.2rem;
+}
+
+h4{
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+h5{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+h6, span, i.fa-regular{
+    font-size: 1.3rem;
+    line-height: 1.95rem;
+}
+
+button, *::placeholder{
+    font-family: 'Poppins', 'sans-serif';    
+}
+
+
+
+/* Second Page */
+
+.content_profile{
+    height: 100vh;
+}
+
+.content_profile > div:first-child{
+    height: 130px;
+    width: 100%;
+}
+.content_profile > div:last-child{
+    height: 100%;
+    width: 100%;
+    /* fill: rgba(255, 255, 255, 0.50);
+    background-color: #FFFFFF80; */
+    /* From https://css.glass */
+background: rgba(255, 255, 255, 0.5);
+border-radius: 50px 50px 0 0;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(75px);
+-webkit-backdrop-filter: blur(75px);
+position: relative;
+}
+
+.profile-top-container{
+    width: 100%;
+    padding: 0px 25px;
+}
+
+.pfp-settings-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 25px;
+}
+
+.pfp_big{
+    width: 165px;
+    height: 165px;
+    margin-top: -80px;
+}
+
+.settings{
+    font-size: 1.5rem;
+    background-color: #fff;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9999999px;
+    margin-bottom: 7px;
+}
+
+.profile-data{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 25px;
+    margin-bottom: 44px;
+}
+
+.followers, .followers > div{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+}
+.followers > div{
+    gap: 5px;
+}
+
+.followers span, .description{
+    font-size: 1.3rem;
+}
+
+.description{
+    white-space: pre-line;
+}
+
+.categories{
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    margin-bottom: 25px;
+}
+
+.separator{
+    width: 100%;
+    height: 2px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.438);
+}
