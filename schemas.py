@@ -1,10 +1,11 @@
-from pydantic import BaseModel, conint
+from typing import Type
+from fastapi import Form
+from pydantic import BaseModel, ValidationError, conint
 from datetime import datetime
 # from typing import Optional
 
 
 class PostBase(BaseModel):
-    title: str
     content: str
 
 
@@ -40,7 +41,6 @@ class Post(PostBase):
     owner_id: int
     owner: UserBase
     content: str
-    title: str
 
     class Config:
         orm_mode = True
@@ -56,9 +56,9 @@ class PostOut(BaseModel):
 
 class UserCreate(BaseModel):
     login: str
-    password: str
     user_fname: str
     user_sname: str
+    password: str
 
 
 class UserLogin(BaseModel):
@@ -83,3 +83,14 @@ class Like(BaseModel):
 class Subscribe(BaseModel):
     user_id: int
     dir: conint(le=1)
+
+def validate_json(model: Type[BaseModel]):
+    def wrapper(body: str = Form(...)):
+        try:
+            return model.parse_raw(body)
+        except ValidationError as exc:
+            errors = exc.errors()
+            for error in errors:
+                error["loc"] = tuple(["body"] + list(error["loc"]))
+            raise error
+    return wrapper

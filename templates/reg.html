@@ -17,19 +17,55 @@
         <div class="container-textR" style="margin-top: -20px;">
             <h2>Hello, this is a registration form.</h2> <br>
         </div>
-        <div class="container-formR">
-            <form action="{{ url_for('reg')}}" method="POST" enctype="multipart/form-data">
-                <label for="lname">Email:</label><br>
-                <input type="text" id="email" name="email" value="" class="input-in"><br><br>
-                <label for="lname">First name:</label><br>
-                <input type="text" id="fname" name="fname" value="" class="input-in"><br><br>
-                <label for="lname">Last name:</label><br>
-                <input type="text" id="lname" name="lname" value="" class="input-in"><br><br>
-                <label for="lname">Password:</label><br>
-                <input type="password" id="password" name="password" value="" class="input-in"><br><br>
-                <input type="submit" value="Register" id="reg-but">
+        <div class="row my-5">
+            <form method="POST">
+              <div class="mb-3">
+                <label>Username</label>
+                <input type="text" required class="form-control" name="login" value="{{login}}" placeholder="login">
+              </div>
+              <div class="mb-3">
+                <label>user_fname</label>
+                <input type="text" required placeholder="user_fname" name="user_fname" value="{{user_fname}}" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label>user_sname</label>
+                <input type="text" required placeholder="user_sname" name="user_sname" value="{{user_sname}}" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label>Password</label>
+                <input type="password" required placeholder="Choose a secure password" value="{{password}}" name="password" class="form-control">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-        </div>
+          </div>
     </div>
+    <script>
+     function submitForm() {
+         const formData = new FormData(document.getElementById('registrationForm'));
+         const data = {};
+ 
+         formData.forEach((value, key) => {
+             data[key] = value;
+         });
+ 
+         const urlEncodedData = new URLSearchParams(data).toString();
+ 
+         fetch('http://localhost:8000/users/register/', {
+             method: 'POST',
+             headers: {
+                 'Content-Type': 'application/x-www-form-urlencoded',
+             },
+             body: urlEncodedData,
+         })
+         .then(response => response.json())
+         .then(data => {
+             console.log('Success:', data);
+         })
+         .catch((error) => {
+             console.error('Error:', error);
+         });
+     }
+ </script>
 </body>
+
 </html>
