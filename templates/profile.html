@@ -49,8 +49,8 @@
             <div class="right-side">
                 <div class="profile">
                     <div>
-                        <img src="images/pfp_oruntaev.png" alt="pfp" class="pfp">
-                        <h6 class="nickname">oryntaev</h6>
+                        <img src="{{profile.profile_image.url}}" alt="pfp" class="pfp">
+                        <h6 class="nickname">{{ profile.user.username }}</h6>
                     </div>
                     <a href="login page.html">Switch account</a>
                 </div>
@@ -110,21 +110,20 @@
             <div>
                 <div class="profile-top-container">
                     <div class="pfp-settings-container">
-                        <img src="images/pfp_oruntaev_big.png" alt="pfp_big" class="pfp_big">
+                        <img src="{{profile.profile_image.url}}" alt="pfp_big" class="pfp_big">
                         <div class="settings">
                             <p>•••</p>
                         </div>    
                     </div>
 
                     <div class="profile-data">
-                        <h4>oryntaev</h4>
+                        <h4>{{ profile.user.username }}</h4>
                         <div class="followers">
                             <div><h5>48</h5><span>Followers</span></div>
                             <div><h5>64</h5><span>Following</span></div>
                         </div>
                         <p class="description">
-                            i love cool socks, sneakers and stickers
-                            hot take: MF DOOM is the best MC ever</p>
+                            {{ profile.bio }}</p>
                     </div>
 
                     <div class="categories">
@@ -136,10 +135,10 @@
                     <div class="posts-container">
                         <hr class="separator">
                         <div class="tweet">
-                            <img src="images/pfp_oruntaev.png" alt="pfp" class="pfp">
+                            <img src="{{profile.profile_image.url}}" alt="pfp" class="pfp">
                             <div class="tweet-content">
                                 <div class="tweet-content__info">
-                                    <h6 class="nickname">oryntaev</h6>
+                                    <h6 class="nickname">{{ profile.user.username }}</h6>
                                     <span class="tweet-time">3h</span>
                                 </div>
                                 <p class="tweet-content__text">have you ever thought you were in love with someone but then
@@ -162,10 +161,10 @@
                         </div>
                         <hr class="separator">
                         <div class="tweet separated">
-                            <img src="images/pfp_oruntaev.png" alt="pfp" class="pfp">
+                            <img src="{{profile.profile_image.url}}" alt="pfp" class="pfp">
                             <div class="tweet-content">
                                 <div class="tweet-content__info">
-                                    <h6 class="nickname">oryntaev</h6>
+                                    <h6 class="nickname">{{ profile.user.username }}</h6>
                                     <span class="tweet-time">3h</span>
                                 </div>
                                 <p class="tweet-content__text">i need a room full of mirrors so i can be surrounded by winners</p>

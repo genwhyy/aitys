@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="static/css/login-style.css">
+    <link rel="stylesheet" href="{% static 'login-style.css' %}">
 </head>
 <body>
     <img id="background" src="static/images/splash.png" alt="">
@@ -16,11 +17,9 @@
             <h2>Hello, this is a login form.</h2> <br>
         </div>
         <div class="container-form">
-            <form action="{{ url_for('login')}}" method="POST" enctype="multipart/form-data">
-                <label for="lname">Email:</label><br>
-                <input type="text" id="email" name="email" value="" class="input-in"><br><br>
-                <label for="lname">Password:</label><br>
-                <input type="password" id="password" name="password" value="" class="input-in"><br><br>
+            <form action="{% url 'user_login' %}" method="POST" enctype="multipart/form-data">
+                {{form.as_p}}
+                {% csrf_token %}
                 <input type="submit" value="Login">
             </form>
         </div>
